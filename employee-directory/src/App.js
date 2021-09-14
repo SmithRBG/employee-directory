@@ -1,8 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import  Navbar from "./components/Navbar"
+import Jumbotron from './components/Jumbotron';
+import Card from './components/Card';
 
 function App() {
-  return (
+  return ( <div className="container">
+    <Navbar />
+    <Jumbotron />
+    <Card />
+  </div>
+  );
+}
+
+
+/*   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -19,7 +30,7 @@ function App() {
         </a>
       </header>
     </div>
-  );
-}
+  ); */
+
 
 export default App;
