@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import Card from "./Card";
+import Container from "./Container";
+import Row from "./Row";
+import Col from "./Col";
+import UserDetail from "./UserDetail";
+import SearchForm from "./SearchForm";
+//make import for container, row, col, userdetail, usersearch, searchform 
 
-class RandomContainer extends Component {
+class RandomLogic extends Component {
     state = {
         result: {},
         search: ""
@@ -68,7 +74,7 @@ class RandomContainer extends Component {
   }
 }
 
-export default RandomContainer;
+export default RandomLogic;
 
 
 
@@ -78,3 +84,10 @@ export default RandomContainer;
 setState()
 
 componentWillUnmount() */
+
+
+/* In general what you would do is:
+1. When the component loads you need to fetch using randomUser API and keep that array rendered using table
+2. When the user tries to sort based on certain criteria such as age or name  , sort and render
+Just a front end react stuff that you have to do, no back end work.  It is pretty much like your weather forecast hw that you would have done in HW 6 or 
+so, where you will use fetch to get weather data and render, here you will use react and react components to render */
