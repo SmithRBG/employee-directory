@@ -17,3 +17,5 @@ function App() {
 
 
 export default App;
+
+//This is where you will put together the look of the components on the page for viewing.
