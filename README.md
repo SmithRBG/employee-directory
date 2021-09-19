@@ -13,6 +13,6 @@ Given a table of random users generated from the Random User API, when the user 
 
 The user should be able to:
 
-Sort the table by at least one category
+Sort and filter the users by name.
 
-Filter the users by at least one property.
+![scs1](https://user-images.githubusercontent.com/81999910/133945468-04c843b8-4bd6-4d44-bc8b-089a2b64327b.JPG)
