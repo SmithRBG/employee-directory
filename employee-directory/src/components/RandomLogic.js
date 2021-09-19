@@ -5,11 +5,12 @@ import Row from "./Row";
 import Col from "./Col";
 import UserDetail from "./UserDetail";
 import SearchForm from "./SearchForm";
+import API from "../utils/API";
 //make import for container, row, col, userdetail, usersearch, searchform 
 
 class RandomLogic extends Component {
     state = {
-        result: {},
+        result: [],
         search: ""
     };
 
@@ -18,8 +19,8 @@ class RandomLogic extends Component {
     }
 
     searchNames = query => {
-        AudioParam.search(query)
-        .then(res => this.setState({result:res.data}
+        API.search(query)
+        .then(res => this.setState({result:res.data.results}
         ))
         .catch(err => console.log(err));
     };
@@ -28,15 +29,19 @@ class RandomLogic extends Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({
-            [name]: value
+            [name]: value//[name]=> search: "r"
         });
+       const findEmployees = this.state.result.filter(person => {
+         return person.name.first.toLowerCase().includes(value.toLowerCase()) ||  person.name.last.toLowerCase().includes(value.toLowerCase())
+       });
+       this.setState({
+         result:findEmployees
+       })
+
     };
 
     // When the form is submitted, search the API for the value of `this.state.search`
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.searchNames(this.state.search);
-    };
+    
 
   render() {
     return (
@@ -47,13 +52,19 @@ class RandomLogic extends Component {
             <Card
               heading={this.state.result.Title || "Search for a Name"}
             >
-              {this.state.result.Title ? (
-                <UserDetail
-                  first={this.state.result.first}
-                  last={this.state.result.last}
-                  email={this.state.result.email}
-                  age={this.state.result.age}
-                />
+              {this.state.result.length>0 ? (
+                this.state.result.map(person =>{
+                  return (
+                    <UserDetail
+                    photo={person.picture.thumbnail}
+                    first={person.name.first}
+                    last={person.name.last}
+                    email={person.email}
+                    Phone={person.phone}
+                  />
+                  )
+                })
+              
               ) : (
                 <h3>No Results to Display</h3>
               )}
@@ -64,7 +75,7 @@ class RandomLogic extends Component {
               <SearchForm
                 value={this.state.search}
                 handleInputChange={this.handleInputChange}
-                handleFormSubmit={this.handleFormSubmit}
+             
               />
             </Card>
           </Col>

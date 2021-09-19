@@ -7,6 +7,8 @@ function UserDetail(props) {
       <h3>First Name: {props.first}</h3>
       <h3>Last Name: {props.last}</h3>
       <h3>Email: {props.email}</h3>
+      <h3>Phone: {props.Phone}</h3>
+     <img src={props.photo} />
     </div>
   );
 }
