@@ -14,7 +14,7 @@ class RandomLogic extends Component {
     };
 
     componentDidMount() {
-        this.searchNames("Adam");
+        this.searchNames("");
     }
 
     searchNames = query => {
@@ -40,7 +40,8 @@ class RandomLogic extends Component {
 
   render() {
     return (
-      <Container>
+    
+       <Container>
         <Row>
           <Col size="md-8">
             <Card
@@ -50,7 +51,6 @@ class RandomLogic extends Component {
                 <UserDetail
                   first={this.state.result.first}
                   last={this.state.result.last}
-                  location={this.state.result.location}
                   email={this.state.result.email}
                   age={this.state.result.age}
                 />
@@ -70,6 +70,23 @@ class RandomLogic extends Component {
           </Col>
         </Row>
       </Container>
+
+
+/*       <Card
+              heading={this.state.result.Title || "Search for a Name"}
+            >
+              {this.state.result.Title ? (
+                <UserDetail
+                  first={this.state.result.first}
+                  last={this.state.result.last}
+                  location={this.state.result.location}
+                  email={this.state.result.email}
+                  age={this.state.result.age}
+                />
+              ) : (
+                <h3>No Results to Display</h3>
+              )}
+          </Card> */
     );
   }
 }
