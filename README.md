@@ -15,4 +15,6 @@ The user should be able to:
 
 Sort and filter the users by name.
 
+https://smithrbg.github.io/Employee-Directory/
+
 ![scs1](https://user-images.githubusercontent.com/81999910/133945468-04c843b8-4bd6-4d44-bc8b-089a2b64327b.JPG)
