@@ -6,10 +6,11 @@ import RandomLogic from './components/RandomLogic';
 
 function App() {
   return ( <div className="container">
-    <RandomLogic />
+    
     <Navbar />
     <Jumbotron />
-    <Card />
+    <RandomLogic />
+    
   </div>
   );
 }
