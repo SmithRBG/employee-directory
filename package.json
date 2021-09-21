@@ -1,6 +1,6 @@
 {
-  "homepage": "https://smithrbg.github.io/employee-directory",
-  "name": "employee-directory",
+  "homepage": "https://smithRBG.github.io/employee-directory",
+  "name": "Employee-Directory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
